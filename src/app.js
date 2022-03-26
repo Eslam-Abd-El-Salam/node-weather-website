@@ -5,6 +5,8 @@ const hbs = require('hbs')
 const request = require('request');
 
 
+const port = process.env.PORT  || 3000
+
 //Define Paths for express  config
 const viewsPath = (path.join(__dirname,'../templates/views')) 
 const partialsPath = (path.join(__dirname,'../templates/partials'))
@@ -131,6 +133,6 @@ app.get('*',(req,res)=>{
 })
 
 
-app.listen(3000,()=>{
-    console.log("server is up on port 3000;")
+app.listen(port,()=>{
+    console.log("server is up on port "+port)
 })
